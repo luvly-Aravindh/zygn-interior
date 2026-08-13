@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import boatcraftLogo from "../assets/form-logo.png";
 import "../Components/pop.css";
+import { submitLead, validateFields } from "../api/desk";
 
 const Popup = ({ show, onClose }) => {
   const [msg, setMsg] = useState("");
@@ -204,43 +205,38 @@ const Popup = ({ show, onClose }) => {
       country_code: countryCode,
       mobile: phone,
       monthly_projects: formData.monthly_projects,
-      project_details: formData.project_details
+      project_details: formData.project_details,
+      honeypot: "",
     };
 
     try {
-      const response = await fetch("/zygn/php/index.php", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(submissionData)
-      });
+      const result = await submitLead(submissionData);
 
-      const data = await response.json();
+      if (result.error) {
+        setMsg(result.message || "Submission failed. Please try again.");
+        setIsSubmitting(false);
+        return;
+      }
 
-      if (response.ok && data.status) {
+      if (result.status === "success") {
+        setSubmitSuccess(true);
+        setMsg(result.message || "Form submitted successfully!");
+        setIsSubmitting(false);
 
-  setSubmitSuccess(true);
-  setMsg(data.message || "Form submitted successfully!");
-
-  // ✅ Enable button BEFORE redirect
-  setIsSubmitting(false);
-
-  const redirectUrl = data.redirect || "/zygn/php/index.php";
-  setTimeout(() => {
-    window.location.href = redirectUrl;
-  }, 1000);
-
-} else {
-  setMsg(data.message || "Submission failed.");
-  setIsSubmitting(false); // ✅ also enable on failure
-}
-
+        // Redirect to TidyCal booking page after 1.5 seconds
+        setTimeout(() => {
+          window.location.href = "https://tidycal.com/marketingptgtech/30min-free-zygn-demo";
+        }, 1500);
+      } else {
+        setMsg(result.message || "Submission failed.");
+        setIsSubmitting(false);
+      }
     } catch (error) {
       console.error("Error submitting form:", error);
       setMsg("Network error. Please try again.");
-    } finally {
       setIsSubmitting(false);
+    } finally {
+      // Don't set isSubmitting to false here as it's already done above
     }
   };
 

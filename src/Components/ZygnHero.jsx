@@ -66,27 +66,30 @@ export default function ZygnHero({ isPopupOpen = false, openPopup }) {
 </div>
 
 
-<div className="mt-6 text-center px-0 sm:px-0">
+<div className="mt-6 text-center px-0">
 
   {/* Line 1 */}
   <motion.h1
     initial={{ opacity: 0, y: 40 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.7 }}
-    className="text-[32px] leading-tight font-extrabold sm:text-[28px] md:text-7xl"
+    className="text-[24px] leading-tight font-extrabold sm:text-[28px] md:text-7xl"
   >
     RUN YOUR INTERIOR DESIGN-BUILD
   </motion.h1>
 
-  {/* Line 2: DESIGN–BUILD + pill */}
-  <div className="mt-2 sm:mt-0 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+  {/* Line 2: DESIGN-BUILD + pill */}
+  <div className="mt-2 sm:mt-0 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
+
     <motion.h1
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.1 }}
-      className="text-[30px] leading-tight font-extrabold sm:text-[28px] md:text-7xl"
+      className="text-[20px] leading-tight font-extrabold sm:text-[28px] md:text-7xl"
     >
-      <span className="text-red-500">FIRM WITH REAL-TIME CONTROL,</span>
+      <span className="text-red-500">
+        FIRM WITH REAL-TIME CONTROL,
+      </span>
     </motion.h1>
 
     {/* Purple pill */}
@@ -94,13 +97,14 @@ export default function ZygnHero({ isPopupOpen = false, openPopup }) {
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.2 }}
-      className="sm:rounded-full rounded-lg bg-purple-600 sm:px-4 px-2 py-2 text-xl sm:text-sm font-bold text-white text-center"
+      className="rounded-lg sm:rounded-full bg-purple-600 px-3 sm:px-4 py-2 text-sm sm:text-sm font-bold text-white text-center"
     >
-        India-First 
-      <span className="block sm:text-[10px] text-[10px] font-normal leading-tight">
+      India-First
+      <span className="block text-[10px] font-normal leading-tight">
         End-to-End Workflow
       </span>
     </motion.div>
+
   </div>
 
   {/* Line 3 */}
@@ -108,38 +112,41 @@ export default function ZygnHero({ isPopupOpen = false, openPopup }) {
     initial={{ opacity: 0, y: 40 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ delay: 0.15 }}
-    className="mt-2 sm:mt-0 text-[25px] leading-tight font-extrabold sm:text-[28px] md:text-7xl"
+    className="mt-2 sm:mt-0 text-[19px] leading-tight font-extrabold sm:text-[28px] md:text-7xl"
   >
-NOT SPREADSHEETS,CHATS, AND  </motion.h1>
+    NOT SPREADSHEETS, CHATS, AND
+  </motion.h1>
 
- {/* Line 4 */}
-<div className="mt-3 sm:mt-0 grid grid-cols-3 sm:flex items-center justify-center gap-2 sm:gap-4">
+  {/* Line 4 */}
+  <div className="mt-3 sm:mt-0 grid grid-cols-3 sm:flex items-center justify-center gap-1 sm:gap-4">
 
-  {/* Red pill */}
-  <div className="sm:rounded-full rounded-lg bg-red-600 sm:px-3 px-0 sm:py-2 py-2 text-sm sm:text-sm font-bold text-center">
-    ₹50–400 CR
-    <span className="block text-[11px] sm:text-[10px] font-normal leading-tight">
-      Project Values Managed
-    </span>
+    {/* Red pill */}
+    <div className="rounded-lg sm:rounded-full bg-red-600 px-1 sm:px-3 py-2 text-[11px] sm:text-sm font-bold text-center">
+      ₹50–400 CR
+      <span className="block text-[8px] sm:text-[10px] font-normal leading-tight">
+        Project Values Managed
+      </span>
+    </div>
+
+    {/* Constant Follow-ups */}
+    <motion.h1
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.2 }}
+      className="text-[16px] sm:text-[28px] md:text-7xl font-extrabold text-center leading-tight"
+    >
+      CONSTANT FOLLOW-UPS
+    </motion.h1>
+
+    {/* Green pill */}
+    <div className="rounded-lg sm:rounded-full bg-green-500 px-1 sm:px-3 py-2 text-[11px] sm:text-sm font-bold text-center">
+      300 USERS
+      <span className="block text-[8px] sm:text-[10px] font-normal leading-tight">
+        35% Increase in Productivity
+      </span>
+    </div>
+
   </div>
-
-  <motion.h1
-    initial={{ opacity: 0, y: 40 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ delay: 0.2 }}
-    className="text-[22px] sm:text-[28px] md:text-7xl font-extrabold text-center leading-tight"
-  >
-  CONSTANT FOLLOW-UPS  </motion.h1>
-
-  {/* Green pill */}
-  <div className="sm:rounded-full rounded-lg bg-green-500 sm:px-3 px-0 sm:py-2 py-2 text-sm sm:text-sm font-bold text-center">
-    300 USERS
-    <span className="block text-[11px] sm:text-[10px] font-normal leading-tight">
-      35% Increase in Productivity
-    </span>
-  </div>
-
-</div>
 
 </div>
 
