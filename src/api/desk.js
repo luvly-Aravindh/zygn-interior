@@ -26,10 +26,32 @@ export function validateFields(fields) {
     errors.studio_name = "Studio name is required and must be at least 2 characters";
   }
 
-  // Email validation
+  // Email validation - only work emails (no personal/free email domains)
+  const email = (fields.email || "").trim().toLowerCase();
+  const personalEmailDomains = [
+    "gmail.com",
+    "yahoo.com",
+    "outlook.com",
+    "hotmail.com",
+    "aol.com",
+    "icloud.com",
+    "mail.com",
+    "protonmail.com",
+    "yandex.com",
+    "zoho.com",
+    "rediffmail.com",
+    "test.com",
+    "example.com",
+  ];
+
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!fields.email || !emailRegex.test(fields.email)) {
+  if (!email || !emailRegex.test(email)) {
     errors.email = "Valid email address is required";
+  } else {
+    const emailDomain = email.split("@")[1];
+    if (personalEmailDomains.includes(emailDomain)) {
+      errors.email = "Please use your work email (company domain), not personal email";
+    }
   }
 
   // Phone validation
