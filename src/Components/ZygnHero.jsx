@@ -72,23 +72,15 @@ export default function ZygnHero({ isPopupOpen = false, openPopup }) {
     initial={{ opacity: 0, y: 40 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.7 }}
-    className="mx-auto font-extrabold tracking-tight sm:tracking-tight leading-[1.14] sm:leading-[1.18] text-[clamp(1.35rem,6.2vw,1.65rem)] sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl"
+    className="mx-auto font-extrabold tracking-tight sm:tracking-tight leading-[1.12] sm:leading-[1.18] text-[1.15rem] sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl"
   >
-    {/* Mobile — 4 strong lines, larger type */}
-    <span className="sm:hidden inline-block max-w-[22rem]">
-      <span className="block">
-        RUN YOUR INTERIOR{" "}
-        <span className="whitespace-nowrap">DESIGN‑BUILD</span>
-      </span>
-      <span className="block text-red-500">
-        FIRM WITH{" "}
-        <span className="whitespace-nowrap">REAL‑TIME CONTROL,</span>
-      </span>
-      <span className="block">
-        NOT SPREADSHEETS,
-        <br />
-        CHATS, AND CONSTANT FOLLOW‑UPS
-      </span>
+    {/* Mobile — 5 deliberate lines, readable size */}
+    <span className="sm:hidden inline-block w-full">
+      <span className="block whitespace-nowrap">RUN YOUR INTERIOR</span>
+      <span className="block whitespace-nowrap">DESIGN‑BUILD</span>
+      <span className="block whitespace-nowrap text-red-500">FIRM WITH REAL‑TIME CONTROL,</span>
+      <span className="block whitespace-nowrap">NOT SPREADSHEETS, CHATS, AND</span>
+      <span className="block whitespace-nowrap">CONSTANT FOLLOW‑UPS</span>
     </span>
 
     {/* Tablet — 4 balanced lines */}
@@ -113,25 +105,25 @@ export default function ZygnHero({ isPopupOpen = false, openPopup }) {
     initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ delay: 0.25, duration: 0.5 }}
-    className="mt-6 sm:mt-7 grid grid-cols-2 sm:flex sm:flex-row sm:flex-wrap items-center justify-items-center justify-center gap-2.5 sm:gap-3 md:gap-4 w-full max-w-sm sm:max-w-none mx-auto"
+    className="mt-5 sm:mt-7 grid grid-cols-2 sm:flex sm:flex-row sm:flex-wrap items-center justify-items-center justify-center gap-1.5 sm:gap-3 md:gap-4 w-full max-w-[16.5rem] sm:max-w-none mx-auto"
   >
-    <div className="rounded-full bg-purple-600 px-3 py-2.5 sm:px-5 text-sm font-bold text-white text-center w-full sm:w-auto">
+    <div className="rounded-full bg-purple-600 px-2.5 py-1.5 sm:px-5 sm:py-2.5 text-[11px] sm:text-sm font-bold text-white text-center">
       India-First
-      <span className="block text-xs font-normal leading-snug opacity-90">
+      <span className="block text-[9px] sm:text-xs font-normal leading-tight opacity-90">
         End-to-End Workflow
       </span>
     </div>
 
-    <div className="rounded-full bg-red-600 px-3 py-2.5 sm:px-5 text-sm font-bold text-white text-center w-full sm:w-auto">
+    <div className="rounded-full bg-red-600 px-2.5 py-1.5 sm:px-5 sm:py-2.5 text-[11px] sm:text-sm font-bold text-white text-center">
       ₹50–400 CR
-      <span className="block text-xs font-normal leading-snug opacity-90">
+      <span className="block text-[9px] sm:text-xs font-normal leading-tight opacity-90">
         Project Values Managed
       </span>
     </div>
 
-    <div className="col-span-2 justify-self-center rounded-full bg-green-500 px-5 py-2.5 text-sm font-bold text-white text-center sm:col-span-1">
+    <div className="col-span-2 justify-self-center rounded-full bg-green-500 px-3 py-1.5 sm:px-5 sm:py-2.5 text-[11px] sm:text-sm font-bold text-white text-center sm:col-span-1">
       300 USERS
-      <span className="block text-xs font-normal leading-snug opacity-90">
+      <span className="block text-[9px] sm:text-xs font-normal leading-tight opacity-90">
         35% Increase in Productivity
       </span>
     </div>
