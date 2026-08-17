@@ -66,87 +66,70 @@ export default function ZygnHero({ isPopupOpen = false, openPopup }) {
 </div>
 
 
-<div className="mt-6 text-center px-0">
+<div className="mt-6 w-full max-w-6xl px-3 sm:px-4 text-center">
 
-  {/* Line 1 */}
   <motion.h1
     initial={{ opacity: 0, y: 40 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.7 }}
-    className="text-[24px] leading-tight font-extrabold sm:text-[28px] md:text-7xl"
+    className="mx-auto font-extrabold tracking-tight leading-[1.18] text-[1.05rem] sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl"
   >
-    RUN YOUR INTERIOR DESIGN-BUILD
+    {/* Mobile — short deliberate lines, no mid-word wraps */}
+    <span className="sm:hidden">
+      <span className="block">RUN YOUR INTERIOR</span>
+      <span className="block">DESIGN‑BUILD</span>
+      <span className="block text-red-500">FIRM WITH REAL‑TIME</span>
+      <span className="block text-red-500">CONTROL,</span>
+      <span className="block">NOT SPREADSHEETS,</span>
+      <span className="block">CHATS, AND</span>
+      <span className="block">CONSTANT FOLLOW‑UPS</span>
+    </span>
+
+    {/* Tablet — 5 balanced lines */}
+    <span className="hidden sm:block lg:hidden">
+      <span className="block">RUN YOUR INTERIOR DESIGN‑BUILD</span>
+      <span className="block text-red-500">FIRM WITH REAL‑TIME CONTROL,</span>
+      <span className="block">NOT SPREADSHEETS, CHATS,</span>
+      <span className="block">AND CONSTANT FOLLOW‑UPS</span>
+    </span>
+
+    {/* Desktop — 4 clean full-width lines */}
+    <span className="hidden lg:block">
+      <span className="block whitespace-nowrap">RUN YOUR INTERIOR DESIGN‑BUILD</span>
+      <span className="block whitespace-nowrap text-red-500">FIRM WITH REAL‑TIME CONTROL,</span>
+      <span className="block whitespace-nowrap">NOT SPREADSHEETS, CHATS, AND</span>
+      <span className="block whitespace-nowrap">CONSTANT FOLLOW‑UPS</span>
+    </span>
   </motion.h1>
 
-  {/* Line 2: DESIGN-BUILD + pill */}
-  <div className="mt-2 sm:mt-0 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
-
-    <motion.h1
-      initial={{ opacity: 0, y: 40 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.1 }}
-      className="text-[20px] leading-tight font-extrabold sm:text-[28px] md:text-7xl"
-    >
-      <span className="text-red-500">
-        FIRM WITH REAL-TIME CONTROL,
-      </span>
-    </motion.h1>
-
-    {/* Purple pill */}
-    <motion.div
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.2 }}
-      className="rounded-lg sm:rounded-full bg-purple-600 px-3 sm:px-4 py-2 text-sm sm:text-sm font-bold text-white text-center"
-    >
+  {/* Stat badges */}
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ delay: 0.25, duration: 0.5 }}
+    className="mt-5 sm:mt-7 flex flex-wrap items-center justify-center gap-2 sm:gap-3 md:gap-4"
+  >
+    <div className="rounded-full bg-purple-600 px-3 sm:px-4 py-1.5 sm:py-2 text-[11px] sm:text-sm font-bold text-white text-center">
       India-First
-      <span className="block text-[10px] font-normal leading-tight">
+      <span className="block text-[9px] sm:text-xs font-normal leading-tight opacity-90">
         End-to-End Workflow
       </span>
-    </motion.div>
+    </div>
 
-  </div>
-
-  {/* Line 3 */}
-  <motion.h1
-    initial={{ opacity: 0, y: 40 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ delay: 0.15 }}
-    className="mt-2 sm:mt-0 text-[19px] leading-tight font-extrabold sm:text-[28px] md:text-7xl"
-  >
-    NOT SPREADSHEETS, CHATS, AND
-  </motion.h1>
-
-  {/* Line 4 */}
-  <div className="mt-3 sm:mt-0 grid grid-cols-3 sm:flex items-center justify-center gap-1 sm:gap-4">
-
-    {/* Red pill */}
-    <div className="rounded-lg sm:rounded-full bg-red-600 px-1 sm:px-3 py-2 text-[11px] sm:text-sm font-bold text-center">
+    <div className="rounded-full bg-red-600 px-3 sm:px-4 py-1.5 sm:py-2 text-[11px] sm:text-sm font-bold text-white text-center">
       ₹50–400 CR
-      <span className="block text-[8px] sm:text-[10px] font-normal leading-tight">
+      <span className="block text-[9px] sm:text-xs font-normal leading-tight opacity-90">
         Project Values Managed
       </span>
     </div>
 
-    {/* Constant Follow-ups */}
-    <motion.h1
-      initial={{ opacity: 0, y: 40 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.2 }}
-      className="text-[16px] sm:text-[28px] md:text-7xl font-extrabold text-center leading-tight"
-    >
-      CONSTANT FOLLOW-UPS
-    </motion.h1>
-
-    {/* Green pill */}
-    <div className="rounded-lg sm:rounded-full bg-green-500 px-1 sm:px-3 py-2 text-[11px] sm:text-sm font-bold text-center">
+    <div className="rounded-full bg-green-500 px-3 sm:px-4 py-1.5 sm:py-2 text-[11px] sm:text-sm font-bold text-white text-center">
       300 USERS
-      <span className="block text-[8px] sm:text-[10px] font-normal leading-tight">
+      <span className="block text-[9px] sm:text-xs font-normal leading-tight opacity-90">
         35% Increase in Productivity
       </span>
     </div>
-
-  </div>
+  </motion.div>
 
 </div>
 
